@@ -25,4 +25,8 @@ class FootballTeam
   #   @coach_name = new_coach_name
   # end
 
+  def add_new_player(new_player)
+    @players << new_player
+  end
+
 end

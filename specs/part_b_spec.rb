@@ -31,4 +31,10 @@ class TestBankAccount < MiniTest::Test
     assert_equal("Joe Pasquale", team.coach_name())
   end
 
+  def test_add_new_player()
+    team = @team
+    team.add_new_player("Joe Pesci")
+    assert_equal(6, @players.length)
+  end
+
 end
