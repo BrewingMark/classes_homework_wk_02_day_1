@@ -25,4 +25,10 @@ class TestBankAccount < MiniTest::Test
     assert_equal(@players, team.players())
   end
 
+  def test_set_coach_name()
+    team = @team
+    team.set_coach_name("Joe Pasquale")
+    assert_equal("Joe Pasquale", team.coach_name())
+  end
+
 end
