@@ -10,4 +10,9 @@ class TestBankAccount < MiniTest::Test
     assert_equal("mark", student.get_student_name())
   end
 
+  def test_get_student_cohort()
+    student = Student.new("mark", "G-18")
+    assert_equal("G-18", student.get_student_cohort)
+  end
+
 end
