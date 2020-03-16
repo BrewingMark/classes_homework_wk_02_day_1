@@ -25,4 +25,14 @@ class TestBankAccount < MiniTest::Test
     assert_equal("G-20", student.set_cohort("G-20"))
   end
 
+  def test_student_can_talk()
+    student = Student.new("Mark", "G-18")
+    assert_equal("I can talk!", student.talk())
+  end
+
+  def test_students_favorite_language()
+    student = Student.new("Mark", "G-18")
+    assert_equal("I love Ruby!", student.favorite_language("Ruby"))
+  end
+
 end
