@@ -37,4 +37,10 @@ class TestBankAccount < MiniTest::Test
     assert_equal(6, @players.length)
   end
 
+  def test_check_if_player()
+    team = @team
+    assert_equal(true, team.check_if_player("Joe Smith"))
+    assert_equal(false, team.check_if_player("Will Smith"))
+  end
+
 end

@@ -29,4 +29,8 @@ class FootballTeam
     @players << new_player
   end
 
+  def check_if_player(player)
+    @players.include?(player)
+  end
+
 end
