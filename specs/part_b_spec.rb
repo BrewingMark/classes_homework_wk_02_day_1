@@ -3,11 +3,12 @@ require('minitest/reporters')
 require_relative('../part_b.rb')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
-class TestBankAccount < MiniTest::Test
+class TestFootballTeam < MiniTest::Test
 
   def setup()
     @players = ["Joe Smith", "Joe Jo", "Joe mcJoe", "Joe Blogs Jr", "Joe Cooper"]
-    @team = FootballTeam.new("Avarage Joes", "Joe Blogs", @players)
+    @points = 0
+    @team = FootballTeam.new("Avarage Joes", "Joe Blogs", @players, @points)
   end
 
   def test_team_name()
@@ -41,6 +42,13 @@ class TestBankAccount < MiniTest::Test
     team = @team
     assert_equal(true, team.check_if_player("Joe Smith"))
     assert_equal(false, team.check_if_player("Will Smith"))
+  end
+
+
+  def test_result_win()
+    team = @team
+    team.result("win")
+    assert_equal(3, @points)
   end
 
 end
